@@ -37,6 +37,13 @@ CREATE POLICY "Allow public read access"
 ON agents FOR SELECT 
 TO public 
 USING (true);
+
+-- 비밀번호 시도 횟수 업데이트를 위한 UPDATE 권한
+CREATE POLICY "Allow public update access" 
+ON agents FOR UPDATE 
+TO public 
+USING (true)
+WITH CHECK (true);
 ```
 
 ## 3. 샘플 데이터 삽입

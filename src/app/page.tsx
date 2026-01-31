@@ -5,6 +5,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Fingerprint, Shield, CheckCircle, Circle, Lock, Unlock, Key, Eye, EyeOff } from 'lucide-react';
 import { supabase, AgentData } from '@/lib/supabase';
 
+// 동적 렌더링 강제 (Vercel 빌드 시 prerendering 방지)
+export const dynamic = 'force-dynamic';
+
 export default function SpyTerminal() {
   const [stage, setStage] = useState<'invite' | 'auth' | 'dashboard' | 'success'>('invite');
   const [inviteCode, setInviteCode] = useState('');
